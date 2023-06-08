@@ -1,9 +1,12 @@
 import React from "react";
+import { DiVim } from "react-icons/di";
 import Typewriter from "typewriter-effect";
+
 
 function Type() {
   return (
-    <Typewriter
+    
+    <Typewriter 
       options={{
         strings: [
           "Software Developer",
@@ -14,6 +17,7 @@ function Type() {
         autoStart: true,
         loop: true,
         deleteSpeed: 50,
+        
       }}
     />
   );

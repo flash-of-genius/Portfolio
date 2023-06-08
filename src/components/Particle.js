@@ -5,49 +5,72 @@ function Particle() {
   return (
     <Particles
       id="tsparticles"
-      params={{
-        particles: {
-          number: {
-            value: 160,
-            density: {
-              enable: true,
-              value_area: 1500,
+      options={{
+        background: {
+            color: {
+                value: "blue",
             },
-          },
-          line_linked: {
-            enable: false,
-            opacity: 0.03,
-          },
-          move: {
-            direction: "right",
-            speed: 0.05,
-          },
-          size: {
-            value: 1,
-          },
-          opacity: {
-            anim: {
-              enable: true,
-              speed: 1,
-              opacity_min: 0.05,
-            },
-          },
         },
+        fpsLimit: 120,
         interactivity: {
-          events: {
-            onclick: {
-              enable: true,
-              mode: "push",
+            events: {
+                onClick: {
+                    enable: true,
+                    mode: "push",
+                },
+                onHover: {
+                    enable: true,
+                    mode: "repulse",
+                },
+                resize: true,
             },
-          },
-          modes: {
-            push: {
-              particles_nb: 1,
+            modes: {
+                push: {
+                    quantity: 4,
+                },
+                repulse: {
+                    distance: 200,
+                    duration: 0.4,
+                },
             },
-          },
         },
-        retina_detect: true,
-      }}
+        particles: {
+            color: {
+                value: "#ffffff",
+            },
+            
+            collisions: {
+                enable: true,
+            },
+            move: {
+                direction: "none",
+                enable: true,
+                outModes: {
+                    default: "bounce",
+                },
+                random: false,
+                speed: 2,
+                straight: false,
+            },
+            number: {
+                density: {
+                    enable: true,
+                    area: 800,
+                },
+                value: 25,
+            },
+            opacity: {
+                value: 8,
+            },
+            shape: {
+                type: "star",
+            },
+            size: {
+                value: { min: 1, max: 3 },
+            },
+        },
+        detectRetina: true,
+    }}
     />
   );
 }
